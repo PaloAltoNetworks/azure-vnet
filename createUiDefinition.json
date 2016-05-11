@@ -199,10 +199,10 @@
     ],
     "outputs": {
       "location": "[location()]",
-      "newStorageAccount": "[steps('panvnetconfig').newStorageAccount.name]",
+      "storageAccountName": "[steps('panvnetconfig').newStorageAccount.name]",
       "storageAccountType": "[steps('panvnetconfig').newStorageAccount.type]",
       "storageAccountNewOrExisting" : "[steps('panvnetconfig').newStorageAccount.newOrExisting]",
-      "existingStorageAccountRG": "[steps('panvnetconfig').newStorageAccount.resourceGroup]",
+      "storageAccountExistingRG": "[steps('panvnetconfig').newStorageAccount.resourceGroup]",
       "dnsNameForPublicIP": "[steps('VMSeriesConfig').dnsNameForPublicIP.domainNameLabel]",
       "vmName": "[steps('VMSeriesConfig').vmName]",
       "adminUsername": "[basics('adminUsername')]",

@@ -196,6 +196,13 @@
           "Description": "Indicates whether the Storage Account is new or existing"
        }
     },
+    "storageAccountExistingRG": {
+       "type": "string",
+       "defaultValue" : "",
+       "metadata": {
+          "description": "Storage Resource Group of the Existing VM."
+       }
+    },
     "storageAccountType": {
       "type": "string",
       "allowedValues": [
@@ -292,6 +299,9 @@
           },
           "storageAccountName": {
             "value": "[parameters('storageAccountName')]"
+          },
+          "storageAccountExistingRG": {
+               "value": "[parameters('storageAccountExistingRG')]"
           }
         }
       }

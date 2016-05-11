@@ -32,6 +32,9 @@
         "virtualNetworkName": {
             "value": "samisravnet"
         },
+        "virtualNetworkAddressPrefix": {
+            "value": "10.3.0.0/16"
+        },
         "vnetNewOrExisting": {
             "value": "existing"
         },
