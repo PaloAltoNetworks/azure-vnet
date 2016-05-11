@@ -31,6 +31,12 @@
     },
     "virtualNetworkExistingRGName": {
       "type": "string"
+    },
+    "publicIPName": {
+      "type": "string"
+    },
+    "PublicIPRGName": {
+      "type": "string"
     }
   },
   "variables": {
@@ -51,6 +57,9 @@
             "name": "ipconfig-mgmt",
             "properties": {
               "privateIPAllocationMethod": "Dynamic",
+              "publicIPAddress": {
+                 "id": "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPName'))]"
+              },
               "subnet": {
                 "id": "[variables('subnet0Ref')]"
               }
