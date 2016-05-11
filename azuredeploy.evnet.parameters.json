@@ -1,0 +1,69 @@
+{
+    "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "value": "East US"
+        },
+        "storageAccountType": {
+            "value": "Standard_LRS"
+        },
+        "adminUsername": {
+            "value": "admin123"
+        },
+        "adminPassword": {
+            "value": "Hello!"
+        },
+        "publicIPAddressName": {
+            "value": "samisrapublicipesau8"
+        },
+        "storageAccountName": {
+            "value": "samisraspstoragesau8"
+        },
+        "ipAddressPrefix": {
+            "value": "10.3"
+        },
+        "vmName": {
+            "value": "panw-pa-vm-sau8"
+        },
+        "srcIPInboundNSG": {
+            "value": "199.167.55.50/32"
+        },
+        "virtualNetworkName": {
+            "value": "samisravnet"
+        },
+        "vnetNewOrExisting": {
+            "value": "existing"
+        },
+        "virtualNetworkExistingRGName": {
+            "value": "smeast2"
+        },
+        "subnet0Name": {
+            "value": "emgmt"
+        },
+        "subnet1Name": {
+            "value": "euntrust"
+        },
+        "subnet2Name": {
+            "value": "etrust"
+        },
+        "subnet0Prefix": {
+            "value": "10.3.0.0/24"
+        },
+        "subnet1Prefix": {
+            "value": "10.3.1.0/24"
+        },
+        "subnet2Prefix": {
+            "value": "10.3.2.0/24"
+        },
+        "subnet0StartAddress": {
+            "value": "10.3.0.4"
+        },
+        "subnet1StartAddress": {
+            "value": "10.3.1.4"
+        },
+        "subnet2StartAddress": {
+            "value": "10.3.2.4"
+        }
+    }
+}

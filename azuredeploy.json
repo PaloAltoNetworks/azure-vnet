@@ -13,7 +13,7 @@
        "metadata": {
            "description": "Your source public IP address. Added to the inbound NSG on eth0 (MGMT)"
        },
-       "defaultValue": "199.167.55.50/32"
+       "defaultValue": "0.0.0.0/0"
     },
     "ipAddressPrefix": {
        "type": "string",
@@ -153,7 +153,7 @@
         "artifactsBaseUrl": "",
         "description": "URL to acquire other templates"
       },
-      "defaultValue": "https://raw.githubusercontent.com/saurabhtrekker/UI2-SP/master"
+      "defaultValue": "https://raw.githubusercontent.com/PaloAltoNetworks/azure-vnet/master"
     },
     "PublicIPNewOrExisting": {
       "type": "string",
