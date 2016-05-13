@@ -63,7 +63,7 @@
                    "subnets": ""
                },
                "options": {
-		"hideExisting" : true
+		"hideExisting" : false
                },
                "defaultValue": {
                    "name": "fwVNET",
