@@ -15,16 +15,16 @@
             "value": "Hello!"
         },
         "publicIPAddressName": {
-            "value": "samisrapublicipesau1001"
+            "value": "samisrapublicipesau1002"
         },
         "storageAccountName": {
-            "value": "samisraspstoragesau1001"
+            "value": "samisraspstoragesau1002"
         },
         "virtualNetworkAddressPrefix": {
             "value": "192.168.0.0/16"
         },
         "vmName": {
-            "value": "panw-pa-vm-sau1001"
+            "value": "panw-pa-vm-sau1002"
         },
         "srcIPInboundNSG": {
             "value": "199.167.55.50/32"
