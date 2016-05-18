@@ -21,7 +21,7 @@
             "value": "samisraspstoragesau1001"
         },
         "virtualNetworkAddressPrefix": {
-            "value": "192.168"
+            "value": "192.168.0.0/16"
         },
         "vmName": {
             "value": "panw-pa-vm-sau1001"
