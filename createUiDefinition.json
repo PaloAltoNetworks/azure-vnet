@@ -190,7 +190,7 @@
 	    "osPlatform": "Linux",
             "imageReference": {
               "publisher": "paloaltonetworks",
-              "offer": "vmseries",
+              "offer": "vmseries1",
               "sku": "byol"
             }
           }
@@ -203,7 +203,9 @@
       "storageAccountType": "[steps('panvnetconfig').newStorageAccount.type]",
       "storageAccountNewOrExisting" : "[steps('panvnetconfig').newStorageAccount.newOrExisting]",
       "storageAccountExistingRG": "[steps('panvnetconfig').newStorageAccount.resourceGroup]",
-      "dnsNameForPublicIP": "[steps('VMSeriesConfig').dnsNameForPublicIP.domainNameLabel]",
+      "publicIPAddressName": "[steps('VMSeriesConfig').dnsNameForPublicIP.domainNameLabel]",
+      "PublicIPNewOrExisting": "[steps('VMSeriesConfig').dnsNameForPublicIP.newOrExistingOrNone]",
+      "PublicIPRGName": "[steps('VMSeriesConfig').dnsNameForPublicIP.resourceGroup]",
       "vmName": "[steps('VMSeriesConfig').vmName]",
       "adminUsername": "[basics('adminUsername')]",
       "adminPassword": "[basics('SSHCredntials').password]",
@@ -214,6 +216,7 @@
       "virtualNetworkName": "[steps('panvnetconfig').vnetSpec.name]",
       "virtualNetworkExistingRGName": "[steps('panvnetconfig').vnetSpec.resourceGroup]",
       "virtualNetworkAddressPrefix": "[steps('panvnetconfig').vnetSpec.addressPrefix]",
+      "vnetNewOrExisting": "[steps('panvnetconfig').vnetSpec.newOrExisting]",
       "subnet0Name": "[steps('panvnetconfig').vnetSpec.subnets.subnet0.name]",
       "subnet1Name": "[steps('panvnetconfig').vnetSpec.subnets.subnet1.name]",
       "subnet2Name": "[steps('panvnetconfig').vnetSpec.subnets.subnet2.name]",
