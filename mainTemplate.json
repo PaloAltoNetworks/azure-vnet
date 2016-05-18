@@ -1,6 +1,6 @@
 {
   "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
-  "contentVersion": "1.0.0.0",
+  "contentVersion": "1.0.0.5",
   "parameters": {
     "location": {
       "type": "string",
@@ -233,7 +233,7 @@
     "imageSku" : "byol",
     "imageOffer" : "vmseries1",
     "nsgName" : "DefaultNSG",
-    "nicName": "eth",
+    "nicName": "[concat(parameters('vmName'), 'eth')]",
     "FWPrivateIPAddressUntrust": "[parameters('subnet1StartAddress')]",
     "FWPrivateIPAddressTrust": "[parameters('subnet2StartAddress')]",
     "vnetID": "[resourceId(parameters('virtualNetworkExistingRGName'),concat('Microsoft.Network','/','virtualNetworks'),parameters('virtualNetworkName'))]",
