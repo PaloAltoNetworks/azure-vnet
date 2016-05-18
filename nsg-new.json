@@ -11,7 +11,7 @@
       "srcIPInboundNSG": {
         "type": "string"
       },
-      "ipAddressPrefix": {
+      "virtualNetworkAddressPrefix": {
         "type": "string"
       }
   },
@@ -46,7 +46,7 @@
                     "protocol": "*",
                     "sourcePortRange": "*",
                     "destinationPortRange": "*",
-                    "sourceAddressPrefix": "[concat(parameters('ipAddressPrefix'), '.0.0/16')]",
+                    "sourceAddressPrefix": "[concat(parameters('virtualNetworkAddressPrefix'), '.0.0/16')]",
                     "destinationAddressPrefix": "*",
                     "access": "Allow",
                     "priority": 101,

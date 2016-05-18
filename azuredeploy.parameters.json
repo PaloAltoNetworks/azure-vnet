@@ -20,7 +20,7 @@
         "storageAccountName": {
             "value": "samisraspstoragesau1001"
         },
-        "ipAddressPrefix": {
+        "virtualNetworkAddressPrefix": {
             "value": "192.168"
         },
         "vmName": {

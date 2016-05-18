@@ -345,7 +345,7 @@
           "srcIPInboundNSG": {
             "value": "[parameters('srcIPInboundNSG')]"
           },
-          "ipAddressPrefix": {
+          "virtualNetworkAddressPrefix": {
             "value": "[parameters('virtualNetworkAddressPrefix')]"
           }
         }
