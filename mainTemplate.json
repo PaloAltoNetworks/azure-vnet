@@ -1,6 +1,6 @@
 {
   "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
-  "contentVersion": "1.0.0.5",
+  "contentVersion": "1.0.0.6",
   "parameters": {
     "location": {
       "type": "string",
@@ -20,13 +20,16 @@
        "metadata": {
           "description": "Name of VM-Series VM in the Azure portal"
        },
-       "defaultValue": "panw-fw-vm"
+       "defaultValue": "VM-Series"
     },
     "vmSize": {
        "type": "string",
        "allowedValues": [
           "Standard_D3",
-          "Standard_D4"
+          "Standard_D4",
+          "Standard_D3_v2",
+          "Standard_D4_v2",
+          "Standard_A4"
        ],
        "metadata": {
           "description": "Azure VM size for VM-Series"
@@ -36,9 +39,9 @@
     "virtualNetworkName": {
       "type": "string",
       "metadata": {
-        "description": "The name of the Virtual Network"
+        "description": "Name of the Virtual Network (VNET)"
       },
-      "defaultValue": "panwVNET"
+      "defaultValue": "fwVNET"
     },
     "vnetNewOrExisting": {
             "type": "string",
@@ -48,7 +51,7 @@
                 "existing"
             ],
             "metadata": {
-                "description": "Identifies whether to use new or existing Virtual Network"
+                "description": "Use new or existing VNET"
             }
     },
     "virtualNetworkAddressPrefix": {
@@ -62,28 +65,28 @@
       "type": "string",
       "defaultValue": "",
       "metadata": {
-        "description": "Name of resource group of existing Virtual Network (if applicable)"
+        "description": "Name of resource group of existing VNET (if applicable)"
       }
     },
     "subnet0Name": {
       "type": "string",
       "defaultValue": "Mgmt",
       "metadata": {
-        "description": "Subnet for the Mgmt"
+        "description": "Subnet for Management"
       }
     },
     "subnet1Name": {
       "type": "string",
       "defaultValue": "Untrust",
       "metadata": {
-        "description": "Subnet for the Untrust"
+        "description": "Subnet for Untrust"
       }
     },
     "subnet2Name": {
       "type": "string",
       "defaultValue": "Trust",
       "metadata": {
-        "description": "Subnet for the Trust"
+        "description": "Subnet for Trust"
       }
     },
     "subnet0Prefix": {
@@ -131,22 +134,22 @@
     "adminUsername": {
       "type": "string",
       "metadata": {
-        "description": "The name of the Administrator of the new VM and Domain"
+        "description": "Username of the administrator account of VM-Series"
       }
     },
     "adminPassword": {
       "type": "securestring",
       "metadata": {
-        "description": "The password forthe Administrator account of the new VM and Domain"
+        "description": "Password for the administrator account of VM-Series"
       }
     },
     "baseUrl": {
       "type": "string",
       "metadata": {
         "artifactsBaseUrl": "",
-        "description": "URL to acquire other templates"
+        "description": "URL to acquire other VM-Series for Azure templates"
       },
-      "defaultValue": "https://raw.githubusercontent.com/PaloAltoNetworks/azure-vnet/master"
+      "defaultValue": "https://github.com/PaloAltoNetworks/azure"
     },
     "PublicIPNewOrExisting": {
       "type": "string",
@@ -156,7 +159,7 @@
         "existing"
       ],
       "metadata": {
-        "description": "Indicates whether the public IP for mgmt interface is new or existing"
+        "description": "Public IP for mgmt interface is new or existing"
       }
     },
     "PublicIPRGName": {
@@ -175,7 +178,7 @@
     "storageAccountName": {
       "type": "string",
       "metadata": {
-        "description": "Name prefix of the new storage account created to store the VMs disks"
+        "description": "Name prefix of the new storage account created to store the VM's disks"
       }
     },
     "storageAccountNewOrExisting" : {
@@ -186,14 +189,14 @@
           "existing"
        ],
        "metadata": {
-          "Description": "Indicates whether the Storage Account is new or existing"
+          "Description": "Storage Account is new or existing"
        }
     },
     "storageAccountExistingRG": {
        "type": "string",
        "defaultValue" : "",
        "metadata": {
-          "description": "Storage Resource Group of the Existing VM."
+          "description": "Storage's Resource Group for existing VM."
        }
     },
     "storageAccountType": {
@@ -201,18 +204,17 @@
       "allowedValues": [
         "Standard_LRS",
         "Standard_GRS",
-        "Standard_RAGRS",
-        "Premium_LRS"
+        "Standard_RAGRS"
       ],
       "metadata": {
-        "description": "The type of the Storage Account created"
+        "description": "Type of the storage account created"
       },
       "defaultValue": "Standard_LRS"
     },
     "authenticationType": {
             "type": "string",
             "metadata": {
-                "descritpion": "Type of authentication "
+                "descritpion": "Type of administrator user authentication "
             },
             "allowedValues": [
                 "sshPublicKey",
@@ -233,7 +235,7 @@
     "imageSku" : "byol",
     "imageOffer" : "vmseries1",
     "nsgName" : "DefaultNSG",
-    "nicName": "[concat(parameters('vmName'), 'eth')]",
+    "nicName": "[concat(parameters('vmName'), '-eth')]",
     "FWPrivateIPAddressUntrust": "[parameters('subnet1StartAddress')]",
     "FWPrivateIPAddressTrust": "[parameters('subnet2StartAddress')]",
     "vnetID": "[resourceId(parameters('virtualNetworkExistingRGName'),concat('Microsoft.Network','/','virtualNetworks'),parameters('virtualNetworkName'))]",
