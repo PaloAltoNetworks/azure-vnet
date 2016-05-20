@@ -7,7 +7,7 @@
         "name": "adminUsername",
         "type": "Microsoft.Compute.UserNameTextBox",
         "label": "Username",
-        "toolTip": "Admin username for Palo Alto Networks VM-Series next-generation firewall",
+        "toolTip": "Admin username for VM-Series",
 	"osPlatform": "Linux"
       },
       {
@@ -38,7 +38,7 @@
         "name": "panvnetconfig",
         "label": "Storage and Networking",
         "subLabel": {
-          "preValidation": "Configure PA-VM",
+          "preValidation": "Configure VM-Series",
           "postValidation": "Done"
         },
         "bladeTitle": "Storage and Networking",
@@ -70,7 +70,7 @@
                    "addressPrefixSize": "/16"
                },
                "constraints": {
-                   "minAddressPrefixSize": "/16"
+                   "minAddressPrefixSize": "/24"
                },
                "subnets": {
                    "subnet0": {
@@ -80,7 +80,7 @@
                            "addressPrefixSize": "/24"
                        },
                        "constraints": {
-                           "minAddressPrefixSize": "/24",
+                           "minAddressPrefixSize": "/29",
                            "minAddressCount": 1,
                            "requireContiguousAddresses": true
                        }
@@ -92,7 +92,7 @@
                            "addressPrefixSize": "/24"
                        },
                        "constraints": {
-                           "minAddressPrefixSize": "/24",
+                           "minAddressPrefixSize": "/29",
                            "minAddressCount": 4,
                            "requireContiguousAddresses": true
                        }
@@ -104,7 +104,7 @@
                            "addressPrefixSize": "/24"
                        },
                        "constraints": {
-                           "minAddressPrefixSize": "/24",
+                           "minAddressPrefixSize": "/29",
                            "minAddressCount": 4,
                            "requireContiguousAddresses": true
                        }
@@ -129,7 +129,7 @@
         "name": "VMSeriesConfig",
         "label": "VM-Series Configuration",
         "subLabel": {
-          "preValidation": "Configure PA-VM",
+          "preValidation": "Configure VM-Series",
           "postValidation": "Done"
         },
         "bladeTitle": "VM-Series Configuration",
