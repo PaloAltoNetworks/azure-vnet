@@ -59,8 +59,8 @@
                    "subnets": "Subnets"
                },
                "toolTip": {
-                   "virtualNetwork": "Select a new or existing VNET",
-                   "subnets": "To use an existing VNET, 3 subnets must already exist for Mgmt, Untrust and Trust. For a new VNET, the template will create them. "
+                   "virtualNetwork": "To use an existing VNET, 3 subnets must already exist for Mgmt, Untrust and Trust. For a new VNET, the template will create them.",
+                   "subnets": ""
                },
                "options": {
 		"hideExisting" : false
