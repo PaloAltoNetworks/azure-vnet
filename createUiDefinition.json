@@ -38,7 +38,7 @@
         "name": "panvnetconfig",
         "label": "Storage and Networking",
         "subLabel": {
-          "preValidation": "Configure VM-Series",
+          "preValidation": "New or existing resources",
           "postValidation": "Done"
         },
         "bladeTitle": "Storage and Networking",
@@ -59,8 +59,8 @@
                    "subnets": "Subnets"
                },
                "toolTip": {
-                   "virtualNetwork": "",
-                   "subnets": ""
+                   "virtualNetwork": "Select a new or existing VNET",
+                   "subnets": "To use an existing VNET, 3 subnets must already exist for Mgmt, Untrust and Trust. For a new VNET, the template will create them. "
                },
                "options": {
 		"hideExisting" : false
@@ -129,7 +129,7 @@
         "name": "VMSeriesConfig",
         "label": "VM-Series Configuration",
         "subLabel": {
-          "preValidation": "Configure VM-Series",
+          "preValidation": "VM's size, name and DNS name ",
           "postValidation": "Done"
         },
         "bladeTitle": "VM-Series Configuration",
