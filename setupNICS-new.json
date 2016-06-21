@@ -74,6 +74,7 @@
       "location": "[parameters('location')]",
       "apiVersion": "2015-06-15",
       "properties": {
+        "enableIPForwarding": true,
         "ipConfigurations": [
           {
             "name": "ipconfig-untrust",
@@ -93,6 +94,7 @@
       "location": "[parameters('location')]",
       "apiVersion": "2015-06-15",
       "properties": {
+        "enableIPForwarding": true,
         "ipConfigurations": [
           {
             "name": "ipconfig-trust",
