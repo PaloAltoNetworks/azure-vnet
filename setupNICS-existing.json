@@ -79,6 +79,7 @@
             "name": "ipconfig-untrust",
             "properties": {
               "privateIPAllocationMethod": "Dynamic",
+              "enableIPForwarding": true,
               "subnet": {
                 "id": "[variables('subnet1Ref')]"
               }
@@ -93,11 +94,13 @@
       "location": "[parameters('location')]",
       "apiVersion": "2015-06-15",
       "properties": {
+        "enableIPForwarding": true,
         "ipConfigurations": [
           {
             "name": "ipconfig-trust",
             "properties": {
               "privateIPAllocationMethod": "Dynamic",
+              "enableIPForwarding": true,
               "subnet": {
                 "id": "[variables('subnet2Ref')]"
               }
